@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <JustTom_Videos>
+            <version>0.0.1</version>
+        </JustTom_Videos>
+    </modules>
+    <global>
+        <blocks>
+            <justtom_videos>
+                <class>JustTom_Videos_Block</class>
+            </justtom_videos>
+        </blocks>
+        <helpers>
+            <justtom_videos>
+                <class>JustTom_Videos_Helper</class>
+            </justtom_videos>
+        </helpers>
+        <resources>
+            <justtom_videos_setup>
+                <setup>
+                    <module>JustTom_Videos</module>
+                </setup>
+            </justtom_videos_setup>
+        </resources>
+    </global>
+</config>

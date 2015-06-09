@@ -1,0 +1,9 @@
+{
+    "name": "justtom/magento-simple-videos",
+    "type": "magento-module",
+    "description": "Add videos to products and cms pages",
+    "homepage": "https://github.com/just-tom/magento-simple-video",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

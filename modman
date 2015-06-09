@@ -1,0 +1,7 @@
+# JustTom - Videos
+
+# Module Code
+app/code/community/JustTom/Videos    app/code/community/JustTom/Videos
+
+# Module Initializer
+app/etc/modules/JustTom_Videos.xml   app/etc/modules/JustTom_Videos.xml

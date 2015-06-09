@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <JustTom_Videos>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Catalog/>
+
+            </depends>
+        </JustTom_Videos>
+    </modules>
+</config>
