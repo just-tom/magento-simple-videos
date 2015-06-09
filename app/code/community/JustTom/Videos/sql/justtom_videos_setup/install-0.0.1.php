@@ -1,4 +1,10 @@
 <?php
+/**
+ *
+ * Creates Video Attribute Group in all available attribute sets.
+ * Creates Needed fields for video implementation on product entities.
+ *
+ */
 /* @var $installer Mage_Catalog_Model_Resource_Setup */
 $installer = Mage::getResourceModel('catalog/setup', 'default_setup');
 
@@ -7,11 +13,31 @@ $installer->startSetup();
 $productEntity = $installer->getEntityTypeId(Mage_Catalog_Model_Product::ENTITY);
 $videoAttributeGroup = 'Product Video';
 
-$installer->addAttributeGroup(
+$attributeSetIds = $installer->getAllAttributeSetIds($productEntity);
+foreach($attributeSetIds as $attributeSetId){
+    $installer->addAttributeGroup(
+        $productEntity,
+        $attributeSetId,
+        $videoAttributeGroup,
+        50
+    );
+}
+
+$installer->addAttribute(
     $productEntity,
-    $installer->getDefaultAttributeSetId($productEntity),
-    $videoAttributeGroup,
-    50
+    'enable_video',
+    array(
+        'type' => 'int',
+        'label' => 'Enable/Disable Video?',
+        'input' => 'select',
+        'visible' => true,
+        'required' => true,
+        'sort_order' => 0,
+        'source' => 'eav/entity_attribute_source_boolean',
+        'default' => Mage_Eav_Model_Entity_Attribute_Source_Boolean::VALUE_NO,
+        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'group' => $videoAttributeGroup
+    )
 );
 
 $installer->addAttribute(
@@ -24,7 +50,7 @@ $installer->addAttribute(
         'input' => 'text',
         'visible' => true,
         'required' => true,
-        'sort_order' => 0,
+        'sort_order' => 10,
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
         'group' => $videoAttributeGroup
     )
@@ -32,32 +58,14 @@ $installer->addAttribute(
 
 $installer->addAttribute(
     $productEntity,
-    'enable_video',
+    'video_width',
     array(
         'type' => 'int',
-        'label' => 'Enable/Disable Video?',
-        'input' => 'select',
-        'visible' => true,
-        'required' => true,
-        'sort_order' => 10,
-        'source' => 'eav/entity_attribute_source_boolean',
-        'default' => Mage_Eav_Model_Entity_Attribute_Source_Boolean::VALUE_NO,
-        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-        'group' => $videoAttributeGroup
-    )
-);
-
-$installer->addAttribute(
-    $productEntity,
-    'date_from',
-    array(
-        'type' => 'datetime',
-        'label' => 'Date From',
-        'input' => 'date',
+        'label' => 'Video Width',
+        'input' => 'text',
         'visible' => true,
         'required' => false,
         'sort_order' => 20,
-        'backend'	=> "eav/entity_attribute_backend_datetime",
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
         'group' => $videoAttributeGroup
     )
@@ -65,75 +73,14 @@ $installer->addAttribute(
 
 $installer->addAttribute(
     $productEntity,
-    'date_to',
+    'video_height',
     array(
-        'type' => 'datetime',
-        'label' => 'Date To',
-        'input' => 'date',
+        'type' => 'int',
+        'label' => 'Video Height',
+        'input' => 'text',
         'visible' => true,
         'required' => false,
         'sort_order' => 30,
-        'backend'	=> "eav/entity_attribute_backend_datetime",
-        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-        'group' => $videoAttributeGroup
-    )
-);
-
-$installer->addAttribute(
-    $productEntity,
-    'schema_name',
-    array(
-        'type' => 'varchar',
-        'label' => 'Video name',
-        'input' => 'text',
-        'visible' => true,
-        'required' => true,
-        'sort_order' => 40,
-        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-        'group' => $videoAttributeGroup
-    )
-);
-
-$installer->addAttribute(
-    $productEntity,
-    'schema_thumbnail',
-    array(
-        'type' => 'varchar',
-        'label' => 'Thumbnail',
-        'input' => 'text',
-        'visible' => true,
-        'required' => false,
-        'sort_order' => 50,
-        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-        'group' => $videoAttributeGroup
-    )
-);
-
-$installer->addAttribute(
-    $productEntity,
-    'schema_duration',
-    array(
-        'type' => 'varchar',
-        'label' => 'Video duration',
-        'input' => 'text',
-        'visible' => true,
-        'required' => false,
-        'sort_order' => 60,
-        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
-        'group' => $videoAttributeGroup
-    )
-);
-
-$installer->addAttribute(
-    $productEntity,
-    'schema_description',
-    array(
-        'type' => 'varchar',
-        'label' => 'Video description',
-        'input' => 'text',
-        'visible' => true,
-        'required' => true,
-        'sort_order' => 70,
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
         'group' => $videoAttributeGroup
     )
@@ -148,13 +95,58 @@ $installer->addAttribute(
         'input' => 'image',
         'visible' => true,
         'required' => false,
-        'sort_order' => 80,
+        'sort_order' => 40,
         'backend' => 'catalog/category_attribute_backend_image',
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
         'group' => $videoAttributeGroup
     )
 );
 
-unset($videoAttributeGroup, $productEntity);
+$installer->addAttribute(
+    $productEntity,
+    'schema_name',
+    array(
+        'type' => 'varchar',
+        'label' => 'Schema.org Video Name',
+        'input' => 'text',
+        'visible' => true,
+        'required' => true,
+        'sort_order' => 50,
+        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'group' => $videoAttributeGroup
+    )
+);
+
+$installer->addAttribute(
+    $productEntity,
+    'schema_description',
+    array(
+        'type' => 'varchar',
+        'label' => 'Schema.org Video Description',
+        'input' => 'text',
+        'visible' => true,
+        'required' => true,
+        'sort_order' => 60,
+        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'group' => $videoAttributeGroup
+    )
+);
+
+$installer->addAttribute(
+    $productEntity,
+    'schema_duration',
+    array(
+        'type' => 'varchar',
+        'label' => 'Schema.org Video Duration',
+        'input' => 'text',
+        'visible' => true,
+        'required' => false,
+        'sort_order' => 70,
+        'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
+        'group' => $videoAttributeGroup
+    )
+);
+
+unset($videoAttributeGroup, $productEntity, $attributeSetIds);
 
 $installer->endSetup();

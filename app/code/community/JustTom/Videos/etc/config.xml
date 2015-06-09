@@ -24,4 +24,11 @@
             </justtom_videos_setup>
         </resources>
     </global>
+    <phpunit>
+        <suite>
+            <modules>
+                <JustTom_Videos/>
+            </modules>
+        </suite>
+    </phpunit>
 </config>
