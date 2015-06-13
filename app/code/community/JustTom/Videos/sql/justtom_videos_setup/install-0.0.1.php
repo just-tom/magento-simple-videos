@@ -46,7 +46,7 @@ $installer->addAttribute(
     array(
         'type' => 'varchar',
         'label' => 'Youtube URL Code',
-        'note' => 'Only input the youtube code for the video in this input box (e.g. only the code after the youtube url http://www.youtube.com/)',
+        'note' => 'Only input the youtube code for the video in this input box (e.g. only the code after the youtube url http://www.youtube.com/watch?v=)',
         'input' => 'text',
         'visible' => true,
         'required' => true,
