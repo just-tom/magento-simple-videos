@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout>
+    <catalog_product_view>
+        <reference name="product.info.media">
+            <action method="setTemplate">
+                <template>justtom/videos/product/view/media.phtml</template>
+            </action>
+            <block type="core/template" name="product.info.media.video" template="justtom/videos/product/view/video.phtml"/>
+        </reference>
+    </catalog_product_view>
+</layout>

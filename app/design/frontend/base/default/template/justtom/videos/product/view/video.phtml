@@ -1,0 +1,11 @@
+<?php $product = $this->getProduct(); ?>
+<?php $helper = Mage::helper('justtom_videos'); ?>
+<?php if($product->getEnableVideo()): ?>
+    <iframe
+        width="<?php echo $helper->getVideoWidth($product); ?>"
+        height="<?php echo $helper->getVideoHeight($product); ?>"
+        src="<?php echo $helper->getEmbedUrl($product); ?>"
+        frameborder="0"
+        allowfullscreen
+        ></iframe>
+<?php endif; ?>

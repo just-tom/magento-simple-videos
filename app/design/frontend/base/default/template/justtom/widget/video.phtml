@@ -1,0 +1,9 @@
+<?php if($this->isEnabled()): ?>
+    <iframe
+        width="<?php echo $this->getVideoWidth(); ?>"
+        height="<?php echo $this->getVideoHeight(); ?>"
+        src="<?php echo $this->getEmbedUrl(); ?>"
+        frameborder="0"
+        allowfullscreen
+        ></iframe>
+<?php endif; ?>

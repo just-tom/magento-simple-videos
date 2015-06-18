@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <widgets>
-    <justtom_videos_widget_video type="justtom_videos/widget_video" module="justtom_videos">
+    <justtom_videos_widget_video type="justtom_videos/widget_video">
         <name>Just Tom - Video</name>
         <description>SEO friendly video widget to place anywhere</description>
         <parameters>
@@ -33,14 +33,14 @@
                 <required>1</required>
                 <visible>1</visible>
                 <label>Video Width</label>
-                <type>int</type>
+                <type>text</type>
                 <sort_order>20</sort_order>
             </video_width>
             <video_height>
                 <required>1</required>
                 <visible>1</visible>
                 <label>Video Height</label>
-                <type>int</type>
+                <type>text</type>
                 <sort_order>30</sort_order>
             </video_height>
             <placeholder_image>
