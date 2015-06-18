@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<widgets>
+    <justtom_videos_widget_video type="justtom_videos/widget_video" module="justtom_videos">
+        <name>Just Tom - Video</name>
+        <description>SEO friendly video widget to place anywhere</description>
+        <parameters>
+            <enabled>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Enable/Disable</label>
+                <type>select</type>
+                <values>
+                    <enabled>
+                        <value>true</value>
+                        <label>Enable</label>
+                    </enabled>
+                    <disabled>
+                        <value>false</value>
+                        <label>Disable</label>
+                    </disabled>
+                </values>
+                <sort_order>0</sort_order>
+            </enabled>
+            <youtube_code>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Youtube URL Code</label>
+                <description>Only input the youtube code for the video in this input box (e.g. only the code after the youtube url http://www.youtube.com/watch?v=)</description>
+                <type>text</type>
+                <sort_order>10</sort_order>
+            </youtube_code>
+            <video_width>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Video Width</label>
+                <type>int</type>
+                <sort_order>20</sort_order>
+            </video_width>
+            <video_height>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Video Height</label>
+                <type>int</type>
+                <sort_order>30</sort_order>
+            </video_height>
+            <placeholder_image>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Placeholder Image</label>
+                <type>widgetimagechooser/chooser</type>
+                <sort_order>40</sort_order>
+            </placeholder_image>
+            <schema_name>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Schema.org Video Name</label>
+                <type>text</type>
+                <sort_order>50</sort_order>
+            </schema_name>
+            <schema_description>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Schema.org Video Description</label>
+                <type>text</type>
+                <sort_order>60</sort_order>
+            </schema_description>
+            <schema_duration>
+                <required>0</required>
+                <visible>1</visible>
+                <label>Schema.org Video Duration</label>
+                <type>text</type>
+                <sort_order>70</sort_order>
+            </schema_duration>
+        </parameters>
+    </justtom_videos_widget_video>
+</widgets>
