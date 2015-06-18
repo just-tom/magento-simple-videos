@@ -24,4 +24,34 @@
             </justtom_videos_setup>
         </resources>
     </global>
+    <frontend>
+        <layout>
+            <updates>
+                <justtom_videos>
+                    <file>justtom/videos.xml</file>
+                </justtom_videos>
+            </updates>
+        </layout>
+        <product>
+            <collection>
+                <attributes>
+                    <enable_video/>
+                    <youtube_url_code/>
+                    <video_width/>
+                    <video_height/>
+                    <placeholder_image/>
+                    <schema_name/>
+                    <schema_description/>
+                    <schema_duration/>
+                </attributes>
+            </collection>
+        </product>
+    </frontend>
+    <phpunit>
+        <suite>
+            <modules>
+                <JustTom_Videos/>
+            </modules>
+        </suite>
+    </phpunit>
 </config>

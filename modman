@@ -2,6 +2,8 @@
 
 # Module Code
 app/code/community/JustTom/Videos    app/code/community/JustTom/Videos
+app/design/frontend/base/default/layout/justtom     app/design/frontend/base/default/layout/justtom
+app/design/frontend/base/default/template/justtom   app/design/frontend/base/default/template/justtom
 
 # Module Initializer
 app/etc/modules/JustTom_Videos.xml   app/etc/modules/JustTom_Videos.xml
