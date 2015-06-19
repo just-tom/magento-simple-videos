@@ -29,6 +29,24 @@ class JustTom_Videos_Block_Widget_Video
 
     public function getEmbedUrl()
     {
-        return 'https://www.youtube.com/embed/' . $this->getData('youtube_code');
+        return 'https://www.youtube.com/embed/' . $this->getData('youtube_code') . '?rel=0&amp;controls=0&amp;showinfo=0';
+    }
+
+    public function getVideoDuration()
+    {
+        $minutes = ($this->getData('schema_duration_minutes') != NULL) ? $this->getData('schema_duration_minutes') : '0';
+        $seconds = ($this->getData('schema_duration_seconds') != null) ? $this->getData('schema_duration_seconds') : '00';
+
+        return 'T' . $minutes . 'S' . $seconds;
+    }
+
+    public function getImageUrl()
+    {
+        return Mage::getBaseUrl('media') . $this->getData('placeholder_image');
+    }
+
+    public function hasPlaceholderImage()
+    {
+        return ($this->getData('placeholder_image') != NULL) ? true : false;
     }
 }

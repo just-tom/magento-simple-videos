@@ -34,7 +34,6 @@ $installer->addAttribute(
         'required' => true,
         'sort_order' => 0,
         'source' => 'eav/entity_attribute_source_boolean',
-        'default' => Mage_Eav_Model_Entity_Attribute_Source_Boolean::VALUE_NO,
         'global' => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
         'group' => $videoAttributeGroup
     )

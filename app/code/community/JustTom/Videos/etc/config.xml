@@ -2,7 +2,7 @@
 <config>
     <modules>
         <JustTom_Videos>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
         </JustTom_Videos>
     </modules>
     <global>
@@ -42,7 +42,8 @@
                     <placeholder_image/>
                     <schema_name/>
                     <schema_description/>
-                    <schema_duration/>
+                    <schema_duration_minutes/>
+                    <schema_duration_seconds/>
                 </attributes>
             </collection>
         </product>
