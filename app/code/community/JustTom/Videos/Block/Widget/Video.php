@@ -29,7 +29,7 @@ class JustTom_Videos_Block_Widget_Video
 
     public function getEmbedUrl()
     {
-        return 'https://www.youtube.com/embed/' . $this->getData('youtube_code');
+        return 'https://www.youtube.com/embed/' . $this->getData('youtube_code') . '?rel=0&amp;controls=0&amp;showinfo=0';
     }
 
     public function getVideoDuration()

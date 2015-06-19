@@ -15,7 +15,7 @@ class JustTom_Videos_Helper_Data
 
     public function getEmbedUrl($product)
     {
-        return 'https://www.youtube.com/embed/' . $product->getYoutubeUrlCode();
+        return 'https://www.youtube.com/embed/' . $product->getYoutubeUrlCode() . '?rel=0&amp;controls=0&amp;showinfo=0';
     }
 
     public function getVideoDuration($product)
