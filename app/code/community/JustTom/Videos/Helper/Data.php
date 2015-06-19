@@ -17,4 +17,22 @@ class JustTom_Videos_Helper_Data
     {
         return 'https://www.youtube.com/embed/' . $product->getYoutubeUrlCode();
     }
+
+    public function getVideoDuration($product)
+    {
+        $minutes = ($product->getSchemaDurationMinutes() != NULL) ? $product->getSchemaDurationMinutes() : 0;
+        $seconds = ($product->getSchemaDurationSeconds() != NULL )? $product->getSchemaDurationSeconds() : 00;
+
+        return 'T' . $minutes . 'S' . $seconds;
+    }
+
+    public function getImageUrl($product)
+    {
+        return Mage::getBaseUrl('media') . 'wysiwyg/' . $product->getPlaceholderImage();
+    }
+
+    public function hasPlaceholderImage($product)
+    {
+        return ($product->getPlaceholderImage() != NULL) ? true : false;
+    }
 }

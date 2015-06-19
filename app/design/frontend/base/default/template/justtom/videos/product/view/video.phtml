@@ -1,11 +1,24 @@
 <?php $product = $this->getProduct(); ?>
 <?php $helper = Mage::helper('justtom_videos'); ?>
 <?php if($product->getEnableVideo()): ?>
-    <iframe
-        width="<?php echo $helper->getVideoWidth($product); ?>"
-        height="<?php echo $helper->getVideoHeight($product); ?>"
-        src="<?php echo $helper->getEmbedUrl($product); ?>"
-        frameborder="0"
-        allowfullscreen
-        ></iframe>
+    <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+        <h2>Video: <span itemprop="name"><?php echo $product->getSchemaName(); ?></span></h2>
+        <?php if($helper->getVideoDuration($product) != 'T0S00'): ?>
+            <meta itemprop="duration" content="<?php echo $helper->getVideoDuration($product); ?>" />
+        <?php endif; ?>
+        <?php if($helper->hasPlaceholderImage($product)): ?>
+            <meta itemprop="thumbnailUrl" content="<?php echo $helper->getImageUrl($product); ?>" />
+        <?php endif; ?>
+        <meta itemprop="embedURL" content="<?php echo $helper->getEmbedUrl($product); ?>" />
+        <meta itemprop="height" content="<?php echo $helper->getVideoWidth($product); ?>" />
+        <meta itemprop="width" content="<?php echo $helper->getVideoHeight($product); ?>" />
+        <iframe
+            width="<?php echo $helper->getVideoWidth($product); ?>"
+            height="<?php echo $helper->getVideoHeight($product); ?>"
+            src="<?php echo $helper->getEmbedUrl($product); ?>"
+            frameborder="0"
+            allowfullscreen
+            ></iframe>
+        <span itemprop="description"><?php echo $product->getSchemaDescription(); ?></span>
+    </div>
 <?php endif; ?>
