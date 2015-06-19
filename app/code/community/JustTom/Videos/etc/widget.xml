@@ -30,21 +30,21 @@
                 <sort_order>10</sort_order>
             </youtube_code>
             <video_width>
-                <required>1</required>
+                <required>0</required>
                 <visible>1</visible>
                 <label>Video Width</label>
                 <type>text</type>
                 <sort_order>20</sort_order>
             </video_width>
             <video_height>
-                <required>1</required>
+                <required>0</required>
                 <visible>1</visible>
                 <label>Video Height</label>
                 <type>text</type>
                 <sort_order>30</sort_order>
             </video_height>
             <placeholder_image>
-                <required>1</required>
+                <required>0</required>
                 <visible>1</visible>
                 <label>Placeholder Image</label>
                 <type>widgetimagechooser/chooser</type>
@@ -64,13 +64,20 @@
                 <type>text</type>
                 <sort_order>60</sort_order>
             </schema_description>
-            <schema_duration>
+            <schema_duration_minutes>
                 <required>0</required>
                 <visible>1</visible>
-                <label>Schema.org Video Duration</label>
+                <label>Schema.org Video Duration Minutes</label>
                 <type>text</type>
                 <sort_order>70</sort_order>
-            </schema_duration>
+            </schema_duration_minutes>
+            <schema_duration_seconds>
+                <required>0</required>
+                <visible>1</visible>
+                <label>Schema.org Video Duration Seconds</label>
+                <type>text</type>
+                <sort_order>80</sort_order>
+            </schema_duration_seconds>
         </parameters>
     </justtom_videos_widget_video>
 </widgets>
