@@ -28,10 +28,11 @@ It has been integrated with **[Schema.org](https://schema.org/)** tags to make t
 	```
 	{
 		"require":{
-			"justtom/magento-simple-videos": "0.0.1"
+			"justtom/magento-simple-videos": "1.0.0"
 		}
 	}
 	```
+	
  * Install with [modman](https://github.com/colinmollenhour/modman):
  	
  	Initialise Modman in your magento directory with:
