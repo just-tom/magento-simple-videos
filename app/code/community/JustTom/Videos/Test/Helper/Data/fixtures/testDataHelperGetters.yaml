@@ -1,0 +1,28 @@
+eav:
+  catalog_product:
+    - entity_id: 1
+      attribute_set_id: 4
+      type_id: simple
+      sku: book
+      name: Book
+      short_description: Book
+      description: Book
+      url_key: book
+      stock:
+        qty: 100.00
+        is_in_stock:
+      category_ids:
+        - 2 # Default Category
+      price: 10.00
+      website_ids:
+        - base
+      tax_class_id: 1 # None
+      status: 1 # Enabled
+      visibility: 4 # Visible in Catalog & Search
+      video_width: 800
+      video_height: 300
+      youtube_url_code: Nu9bHK4b6j8
+      schema_duration_minutes: 10
+      schema_duration_seconds: 33
+      schema_name: video
+      schema_description: description

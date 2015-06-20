@@ -1,0 +1,7 @@
+product:
+  video_width: 800
+  video_height: 300
+  youtube_url_code: https://www.youtube.com/embed/Nu9bHK4b6j8?rel=0&amp;controls=0&amp;showinfo=0
+  schema_duration: T10S33
+  schema_name: video
+  schema_description: description
