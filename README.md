@@ -32,6 +32,7 @@ It has been integrated with **[Schema.org](https://schema.org/)** tags to make t
 		}
 	}
 	```
+	
  * Install with [modman](https://github.com/colinmollenhour/modman):
  	
  	Initialise Modman in your magento directory with:
