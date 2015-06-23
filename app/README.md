@@ -28,7 +28,7 @@ It has been integrated with **[Schema.org](https://schema.org/)** tags to make t
 	```
 	{
 		"require":{
-			"justtom/magento-simple-videos": "1.0.0"
+			"justtom/magento-simple-videos": "1.0.1"
 		}
 	}
 	```
