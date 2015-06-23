@@ -1,9 +1,21 @@
 <?php if($this->isEnabled()): ?>
-    <iframe
-        width="<?php echo $this->getVideoWidth(); ?>"
-        height="<?php echo $this->getVideoHeight(); ?>"
-        src="<?php echo $this->getEmbedUrl(); ?>"
-        frameborder="0"
-        allowfullscreen
-        ></iframe>
+    <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+    <h2>Video: <span itemprop="name"><?php echo $this->getSchemaName(); ?></span></h2>
+    <?php if($this->getVideoDuration() != 'T0S00'): ?>
+        <meta itemprop="duration" content="<?php echo $this->getVideoDuration(); ?>" />
+    <?php endif; ?>
+    <?php if($this->hasPlaceholderImage()): ?>
+        <meta itemprop="thumbnailUrl" content="<?php echo $this->getImageUrl(); ?>" />
+    <?php endif; ?>
+    <meta itemprop="embedURL" content="<?php echo $this->getEmbedUrl(); ?>" />
+    <meta itemprop="height" content="<?php echo $this->getVideoWidth(); ?>" />
+    <meta itemprop="width" content="<?php echo $this->getVideoHeight(); ?>" />
+        <iframe
+            width="<?php echo $this->getVideoWidth(); ?>"
+            height="<?php echo $this->getVideoHeight(); ?>"
+            src="<?php echo $this->getEmbedUrl(); ?>"
+            frameborder="0"
+            allowfullscreen
+            ></iframe>
+    <span itemprop="description"><?php echo $this->getSchemaDescription(); ?></span>
 <?php endif; ?>

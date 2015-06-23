@@ -15,4 +15,24 @@ class JustTom_Videos_Test_Config_Main
         $this->assertModuleVersionGreaterThanOrEquals($this->expected('module')->getVersion());
     }
 
+    /**
+     * Test Layout files
+     *
+     * @test
+     */
+    public function testLayoutFiles()
+    {
+        $this->assertLayoutFileDefined('frontend','justtom/videos.xml');
+        $this->assertLayoutFileExists('frontend','justtom/videos.xml');
+    }
+
+    /**
+     * Test any helpers created
+     */
+    public function testHelperAliases()
+    {
+        $this->assertHelperAlias('justtom_videos',
+            'JustTom_Videos_Helper_Data');
+    }
+
 }
