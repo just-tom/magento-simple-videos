@@ -6,7 +6,8 @@
             <codePool>community</codePool>
             <depends>
                 <Mage_Catalog/>
-
+                <Mage_Widget/>
+                <Aijko_WidgetImageChooser/>
             </depends>
         </JustTom_Videos>
     </modules>

@@ -3,7 +3,7 @@
 
 Composer Key: `justtom/magento-simple-videos`
 
-Current Version: `1.0.0`
+Current Version: `1.0.1`
 
 Tested PHP Versions: `5.3`, `5.4`, `5.5`
 
