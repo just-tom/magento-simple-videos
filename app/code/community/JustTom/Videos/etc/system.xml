@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <justtom>
+            <label>Just Tom</label>
+            <sort_order>500</sort_order>
+        </justtom>
+    </tabs>
+    <sections>
+        <justtom_videos>
+            <tab>justtom</tab>
+            <label>Videos</label>
+            <sort_order>0</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+                <global>
+                    <label>Global</label>
+                    <sort_order>0</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <rel translation="label,comment">
+                            <label>Show relevant videos</label>
+                            <comment>Show suggested videos when the video finishes</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>justtom_videos/system_config_source_rel</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <config_path>justtom_videos/global/rel</config_path>
+                        </rel>
+                        <controls translation="label,comment">
+                            <label>Show video controls</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>justtom_videos/system_config_source_controls</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <config_path>justtom_videos/global/controls</config_path>
+                        </controls>
+                        <info translation="label,comment">
+                            <label>Show info</label>
+                            <comment>Show video title and player actions</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>justtom_videos/system_config_source_info</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <config_path>justtom_videos/global/info</config_path>
+                        </info>
+                        <privacy translation="label,comment">
+                            <label>Privacy Enhanced</label>
+                            <comment>Enable privacy-enhanced mode</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>justtom_videos/system_config_source_privacy</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <config_path>justtom_videos/global/privacy</config_path>
+                        </privacy>
+                    </fields>
+                </global>
+            </groups>
+        </justtom_videos>
+    </sections>
+</config>
