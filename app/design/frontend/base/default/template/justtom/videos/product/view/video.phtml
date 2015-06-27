@@ -1,7 +1,7 @@
 <?php $product = $this->getProduct(); ?>
 <?php $helper = Mage::helper('justtom_videos'); ?>
 <?php if($product->getEnableVideo()): ?>
-    <div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+    <div itemscope itemtype="http://schema.org/VideoObject">
         <h2>Video: <span itemprop="name"><?php echo $product->getSchemaName(); ?></span></h2>
         <?php if($helper->getVideoDuration($product) != 'T0S00'): ?>
             <meta itemprop="duration" content="<?php echo $helper->getVideoDuration($product); ?>" />
