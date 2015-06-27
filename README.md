@@ -3,7 +3,7 @@
 
 Composer Key: `justtom/magento-simple-videos`
 
-Current Version: `1.0.0`
+Current Version: `1.0.2`
 
 Tested PHP Versions: `5.3`, `5.4`, `5.5`
 
@@ -28,7 +28,7 @@ It has been integrated with **[Schema.org](https://schema.org/)** tags to make t
 	```
 	{
 		"require":{
-			"justtom/magento-simple-videos": "1.0.0"
+			"justtom/magento-simple-videos": "1.0.2"
 		}
 	}
 	```
