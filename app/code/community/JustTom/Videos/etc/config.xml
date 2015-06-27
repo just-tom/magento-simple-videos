@@ -16,6 +16,11 @@
                 <class>JustTom_Videos_Helper</class>
             </justtom_videos>
         </helpers>
+        <models>
+            <justtom_videos>
+                <class>JustTom_Videos_Model</class>
+            </justtom_videos>
+        </models>
         <resources>
             <justtom_videos_setup>
                 <setup>
@@ -24,6 +29,16 @@
             </justtom_videos_setup>
         </resources>
     </global>
+    <default>
+        <justtom_videos>
+            <global>
+                <rel>rel=0</rel>
+                <controls>controls=0</controls>
+                <info>showinfo=0</info>
+                <privacy></privacy>
+            </global>
+        </justtom_videos>
+    </default>
     <frontend>
         <layout>
             <updates>

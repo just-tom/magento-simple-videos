@@ -3,6 +3,11 @@
 class JustTom_Videos_Helper_Data
     extends Mage_Core_Helper_Abstract
 {
+    const XML_CONFIG_PATH_FLAG_INFO = "justtom_videos/global/info";
+    const XML_CONFIG_PATH_FLAG_REL = "justtom_videos/global/rel";
+    const XML_CONFIG_PATH_FLAG_CONTROLS = "justtom_videos/global/controls";
+    const XML_CONFIG_PATH_FLAG_PRIVACY = "justtom_videos/global/privacy";
+
     public function getVideoWidth($product)
     {
         return ($product->getVideoWidth() != null) ? $product->getVideoWidth()
@@ -17,8 +22,9 @@ class JustTom_Videos_Helper_Data
 
     public function getEmbedUrl($product)
     {
-        return 'https://www.youtube.com/embed/' . $product->getYoutubeUrlCode()
-        . '?rel=0&amp;controls=0&amp;showinfo=0';
+        return 'https://www.' . $this->getPrivacyParam() . '.com/embed/'
+        . $product->getYoutubeUrlCode() . '?'
+        . $this->getUrlParams();
     }
 
     public function getVideoDuration($product)
@@ -40,5 +46,35 @@ class JustTom_Videos_Helper_Data
     public function hasPlaceholderImage($product)
     {
         return ($product->getPlaceholderImage() != null) ? true : false;
+    }
+
+    protected function getUrlParams()
+    {
+        return $this->getRelParam() . $this->getInfoParam()
+        . $this->getControlsParam();
+    }
+
+    protected function getRelParam()
+    {
+        $param = Mage::getStoreConfig(self::XML_CONFIG_PATH_FLAG_REL);
+        return ($param != "") ? $param . "&amp;" : '';
+    }
+
+    protected function getInfoParam()
+    {
+        $param = Mage::getStoreConfig(self::XML_CONFIG_PATH_FLAG_INFO);
+        return ($param != "") ? $param . "&amp;" : '';
+    }
+
+    protected function getControlsParam()
+    {
+        $param = Mage::getStoreConfig(self::XML_CONFIG_PATH_FLAG_CONTROLS);
+        return ($param != "") ? $param : '';
+    }
+
+    protected function getPrivacyParam()
+    {
+        $param = Mage::getStoreConfig(self::XML_CONFIG_PATH_FLAG_PRIVACY);
+        return ($param == '-nocookie') ? 'youtube-nocookie' : 'youtube';
     }
 }
