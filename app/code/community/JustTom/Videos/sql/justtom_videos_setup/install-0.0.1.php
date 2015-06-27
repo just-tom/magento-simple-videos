@@ -33,7 +33,7 @@ $installer->addAttribute(
         'label'      => 'Enable/Disable Video?',
         'input'      => 'select',
         'visible'    => true,
-        'required'   => true,
+        'required'   => false,
         'sort_order' => 0,
         'source'     => 'eav/entity_attribute_source_boolean',
         'global'     => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
@@ -50,7 +50,7 @@ $installer->addAttribute(
         'note'       => 'Only input the youtube code for the video in this input box (e.g. only the code after the youtube url http://www.youtube.com/watch?v=)',
         'input'      => 'text',
         'visible'    => true,
-        'required'   => true,
+        'required'   => false,
         'sort_order' => 10,
         'global'     => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
         'group'      => $videoAttributeGroup
@@ -111,7 +111,7 @@ $installer->addAttribute(
         'label'      => 'Schema.org Video Name',
         'input'      => 'text',
         'visible'    => true,
-        'required'   => true,
+        'required'   => false,
         'sort_order' => 50,
         'global'     => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
         'group'      => $videoAttributeGroup
@@ -126,7 +126,7 @@ $installer->addAttribute(
         'label'      => 'Schema.org Video Description',
         'input'      => 'text',
         'visible'    => true,
-        'required'   => true,
+        'required'   => false,
         'sort_order' => 60,
         'global'     => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_STORE,
         'group'      => $videoAttributeGroup
