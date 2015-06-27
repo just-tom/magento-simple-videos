@@ -50,8 +50,9 @@ class JustTom_Videos_Helper_Data
 
     protected function getUrlParams()
     {
-        return $this->getRelParam() . $this->getInfoParam()
-        . $this->getControlsParam();
+        return $this->getRelParam()
+        . $this->getControlsParam()
+        . $this->getInfoParam();
     }
 
     protected function getRelParam()
@@ -63,13 +64,13 @@ class JustTom_Videos_Helper_Data
     protected function getInfoParam()
     {
         $param = Mage::getStoreConfig(self::XML_CONFIG_PATH_FLAG_INFO);
-        return ($param != "") ? $param . "&amp;" : '';
+        return ($param != "") ? $param : '';
     }
 
     protected function getControlsParam()
     {
         $param = Mage::getStoreConfig(self::XML_CONFIG_PATH_FLAG_CONTROLS);
-        return ($param != "") ? $param : '';
+        return ($param != "") ? $param . "&amp;"  : '';
     }
 
     protected function getPrivacyParam()
