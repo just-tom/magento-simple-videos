@@ -21,14 +21,22 @@
                 </values>
                 <sort_order>0</sort_order>
             </enabled>
-            <youtube_code>
+            <video_source>
                 <required>1</required>
                 <visible>1</visible>
-                <label>Youtube URL Code</label>
-                <description>Only input the youtube code for the video in this input box (e.g. only the code after the youtube url http://www.youtube.com/watch?v=)</description>
+                <label>Source of Video</label>
+                <type>select</type>
+                <source_model>JustTom_Videos_Model_Entity_Attribute_Source_Videosource</source_model>
+                <sort_order>5</sort_order>
+            </video_source>
+            <video_code>
+                <required>1</required>
+                <visible>1</visible>
+                <label>Video URL Code</label>
+                <description>Only input the code for the video in this input box (e.g. only the code after the url http://www.youtube.com/watch?v= or https://player.vimeo.com/video/)</description>
                 <type>text</type>
                 <sort_order>10</sort_order>
-            </youtube_code>
+            </video_code>
             <video_width>
                 <required>0</required>
                 <visible>1</visible>
