@@ -7,6 +7,7 @@ class JustTom_Videos_Helper_Data
     const XML_CONFIG_PATH_FLAG_REL = "justtom_videos/global/rel";
     const XML_CONFIG_PATH_FLAG_CONTROLS = "justtom_videos/global/controls";
     const XML_CONFIG_PATH_FLAG_PRIVACY = "justtom_videos/global/privacy";
+    const XML_CONFIG_PATH_FLAG_AUTOPLAY = "justtom_videos/global/autoplay";
 
     public function getVideoWidth($product)
     {
@@ -22,9 +23,30 @@ class JustTom_Videos_Helper_Data
 
     public function getEmbedUrl($product)
     {
+        switch($product->getVideoSource()) {
+            case "youtube":
+                return $this->getYouTubeEmbedUrl($product);
+                break;
+            case "vimeo":
+                return $this->getVimeoEmbedUrl($product);
+                break;
+            default:
+                return '';
+                break;
+        }
+    }
+
+    protected function getYouTubeEmbedUrl($product)
+    {
         return 'https://www.' . $this->getPrivacyParam() . '.com/embed/'
-        . $product->getYoutubeUrlCode() . '?'
+        . $product->getVideoUrlCode() . '?'
         . $this->getUrlParams();
+    }
+
+    protected function getVimeoEmbedUrl($product)
+    {
+        return 'https://player.vimeo.com/video/'
+        . $product->getVideoUrlCode();
     }
 
     public function getVideoDuration($product)
@@ -52,7 +74,8 @@ class JustTom_Videos_Helper_Data
     {
         return $this->getRelParam()
         . $this->getControlsParam()
-        . $this->getInfoParam();
+        . $this->getInfoParam()
+        . $this->getAutoplayParam();
     }
 
     protected function getRelParam()
@@ -77,5 +100,11 @@ class JustTom_Videos_Helper_Data
     {
         $param = Mage::getStoreConfig(self::XML_CONFIG_PATH_FLAG_PRIVACY);
         return ($param == '-nocookie') ? 'youtube-nocookie' : 'youtube';
+    }
+
+    protected function getAutoplayParam()
+    {
+        $param = Mage::getStoreConfig(self::XML_CONFIG_PATH_FLAG_AUTOPLAY);
+        return ($param != "") ? $param . '&amp;' : '';
     }
 }
