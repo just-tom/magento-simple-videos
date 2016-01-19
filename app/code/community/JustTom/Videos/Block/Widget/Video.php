@@ -31,10 +31,38 @@ class JustTom_Videos_Block_Widget_Video
         ) : 400;
     }
 
+    protected function getVideoSource()
+    {
+        return ($this->getData('video_source') != null) ? $this->getData(
+            'video_source'
+        ) : 'youtube';
+    }
+
     public function getEmbedUrl()
     {
-        return 'https://www.youtube.com/embed/' . $this->getData('youtube_code')
+        switch($this->getVideoSource()) {
+            case "youtube":
+                return $this->getYouTubeEmbedUrl();
+                break;
+            case "vimeo":
+                return $this->getVimeoEmbedUrl();
+                break;
+            default:
+                return '';
+                break;
+        }
+    }
+
+    protected function getYoutubeEmbedUrl()
+    {
+        return 'https://www.youtube.com/embed/' . $this->getData('video_code')
         . '?rel=0&amp;controls=0&amp;showinfo=0';
+    }
+
+    protected function getVimeoEmbedUrl()
+    {
+        return 'https://player.vimeo.com/video/'
+        . $this->getData('video_code');
     }
 
     public function getVideoDuration()
