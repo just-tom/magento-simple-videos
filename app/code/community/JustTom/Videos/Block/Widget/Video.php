@@ -31,7 +31,7 @@ class JustTom_Videos_Block_Widget_Video
         ) : 400;
     }
 
-    public function getVideoSource()
+    protected function getVideoSource()
     {
         return ($this->getData('video_source') != null) ? $this->getData(
             'video_source'
@@ -53,13 +53,13 @@ class JustTom_Videos_Block_Widget_Video
         }
     }
 
-    public function getYoutubeEmbedUrl()
+    protected function getYoutubeEmbedUrl()
     {
         return 'https://www.youtube.com/embed/' . $this->getData('video_code')
         . '?rel=0&amp;controls=0&amp;showinfo=0';
     }
 
-    public function getVimeoEmbedUrl()
+    protected function getVimeoEmbedUrl()
     {
         return 'https://player.vimeo.com/video/'
         . $this->getData('video_code');
