@@ -7,7 +7,7 @@
             <depends>
                 <Mage_Catalog/>
                 <Mage_Widget/>
-                <Aijko_WidgetImageChooser/>
+                <AntoineK_MediaChooserField/>
             </depends>
         </JustTom_Videos>
     </modules>

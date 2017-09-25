@@ -55,7 +55,7 @@
                 <required>0</required>
                 <visible>1</visible>
                 <label>Placeholder Image</label>
-                <type>widgetimagechooser/chooser</type>
+                <type>mediachooserfield/adminhtml_widget_mediachooser</type>
                 <sort_order>40</sort_order>
             </placeholder_image>
             <schema_name>

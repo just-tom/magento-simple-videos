@@ -16,9 +16,15 @@
         "mikey179/vfsStream": ">=1.2.0"
     },
     "require": {
-        "aijko/aijko_widgetimagechooser": "0.3.0",
+        "bert-jamfactory/AntoineK_MediaChooserField": "*",
         "magento-hackathon/magento-composer-installer": "*"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/bert-jamfactory/AntoineK_MediaChooserField.git"
+        }
+    ],
     "scripts": {
         "cs": "phpcs --standard=Zend --ignore=Test --colors app/code/community",
         "cbf": "phpcbf --standard=Zend --ignore=Test app/code/community/"
